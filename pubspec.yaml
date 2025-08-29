@@ -5,9 +5,10 @@ pause, next, and previous."
 
 version: 0.0.2
 homepage: https://github.com/mohammadwadhodev/video_list_player
+repository: https://github.com/mohammadwadhodev/video_list_player
 license: MIT
 
-publish_to: 'https://pub.dev'
+
 
 environment:
   sdk: ^3.6.0
