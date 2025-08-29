@@ -1,8 +1,8 @@
 name: video_list_player
 description: "A Flutter package for seamless video playback using video_player. Supports auto transitions and manual play, pause, next, and previous controls for playlists."
 
-version: 0.0.4
-homepage: https://github.com/mohammadwadhodev/video_list_player
+version: 0.0.5
+homepage: https://github.com/mohammadwadhodev/video_list_player.git
 repository: https://github.com/mohammadwadhodev/video_list_player.git
 license: MIT
 
