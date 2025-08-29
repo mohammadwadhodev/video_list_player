@@ -3,7 +3,7 @@ description: "A Flutter package that allows you to play a list of videos using t
 It supports automatic playback of videos one after another and provides manual controls for play, 
 pause, next, and previous."
 
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/mohammadwadhodev/video_list_player
 license: MIT
 
