@@ -9,6 +9,10 @@ void main() {
   ));
 }
 
+/// The main screen that contains the [VideoListPlayer] widget and playback controls.
+///
+/// This screen allows users to interact with the video player, including playing, pausing,
+/// skipping to the next or previous video using the provided control buttons.
 class MyScreen extends StatefulWidget {
   const MyScreen({super.key});
 
@@ -17,6 +21,7 @@ class MyScreen extends StatefulWidget {
 }
 
 class _MyScreenState extends State<MyScreen> {
+  /// The controller responsible for managing video playback.
   VideoListPlayerController? _controller;
 
   @override
@@ -25,18 +30,20 @@ class _MyScreenState extends State<MyScreen> {
     _init();
   }
 
+  /// Initializes the video player controllers and the [VideoListPlayerController].
   Future<void> _init() async {
     final controllers = [
-      VideoPlayerController.networkUrl(Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")),
-      VideoPlayerController.networkUrl(Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"))
+      VideoPlayerController.networkUrl(Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")),
+      VideoPlayerController.networkUrl(Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4")),
     ];
 
+    // Initialize all video controllers
     for (var c in controllers) {
       await c.initialize();
     }
 
-    final controller =
-        VideoListPlayerController(controllers: controllers, autoMode: true);
+    // Create the [VideoListPlayerController] with the list of video controllers
+    final controller = VideoListPlayerController(controllers: controllers, autoMode: true);
 
     setState(() {
       _controller = controller;
@@ -58,7 +65,8 @@ class _MyScreenState extends State<MyScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          VideoListPlayer(aspectRatio: 9 / 16, controller: _controller!),
+          // Display the video player
+          VideoListPlayer(aspectRatio: 16 / 9, controller: _controller!),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
